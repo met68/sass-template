@@ -1,0 +1,58 @@
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* CSS Grid depends much more on CSS than HTML, so there is less boilerplate
+	 than with skeleton. Only basic 1-4 column grids are included.
+	 Any additional needs should be made using custom CSS directives */
+
+.grid-container {
+  position: relative;
+  max-width: $grid-max-width;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: grid;
+  grid-gap: 2rem;
+  gap: 2rem;
+  
+  /* by default use min 200px wide columns auto-fit into width */
+  grid-template-columns: minmax($grid-min-width, 1fr);
+}
+
+/* Helper to remove grid gaps */
+.no-gap {
+  grid-gap: 0px;
+}
+
+/* grids to 3 columns above mobile sizes */
+@media (min-width: $small) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    /* padding: 10px 0; */
+  }
+  
+  /* basic grids - add more as needed !! */
+  .grid-container.fifths {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-container.quarters {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-container.thirds {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-container.halves {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-container.full {
+    grid-template-columns: 1fr;
+  }
+  
+}
+
+/* Added by me */
+@media (min-width: $large) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem 0;
+  }
+}

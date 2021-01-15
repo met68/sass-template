@@ -1,0 +1,73 @@
+/* Miscelanous
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+hr {
+  margin-top: 1rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  width: 62%;
+  @include theme('border-top', $border-color-softer, 0, '1px solid');
+}
+
+@media (min-width: $medium) {
+  hr {
+    width: 38%;
+  }
+}
+
+/*
+  Flash Messages
+*/
+
+.flash {
+  display: block;
+  margin: 0px auto 3rem;
+  width: 100%;
+  max-width: $grid-max-width;
+  padding: 0.5rem 0;
+  text-align: center;
+  z-index: 99;
+}
+
+.flash > span {
+  font-weight: $font-weight-f;
+  letter-spacing: $letter-spacing-m;
+}
+
+/*
+  Footer
+*/
+
+footer {
+  display: block;
+  margin: 5rem auto 0px;
+  width: 100%;
+  max-width: $grid-max-width;
+  padding: 1.5rem 0;
+  text-align: center;
+  @include theme('background-color', $background-color-footer);
+  @include theme('color', $text-color-softer);
+}
+
+footer > span {
+  font-weight: $font-weight-footer;
+  letter-spacing: $letter-spacing-f;
+  text-transform: uppercase;
+}
+
+/* 
+  Noscript
+*/
+noscript {
+  display: inline-block;
+  margin: 0px auto;
+  width: 100%;
+  max-width: $grid-max-width;
+  font-size: 1.5rem;
+  font-weight: $font-weight-p;
+  letter-spacing: $letter-spacing-n;
+  padding: 1rem;
+  text-align: center;
+  background-color: red;
+  color: white;
+}
+

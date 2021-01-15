@@ -1,0 +1,64 @@
+@import 'normalize';
+@import 'config';
+@import 'grid';
+@import 'fonts';
+@import 'colors';
+@import 'typography';
+@import 'buttons';
+@import 'forms';
+@import 'lists';
+@import 'tables';
+@import 'utilities';
+@import 'misc';
+@import 'nav';
+
+
+html {
+  font-size: $base-font-size;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;		        /* changed from 15px in orig skeleton */
+  line-height: 1.6;
+  font-weight: $font-weight-x;  /* Default: 400 */
+  letter-spacing: $letter-spacing-x;
+  font-family: $raleway;
+  @include theme('color', $text-color-normal);
+  @include theme('background-color', $background-color);
+}
+
+/* Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+pre,
+blockquote,
+dl,
+figure,
+table,
+p,
+ul,
+ol,
+form {
+  margin-bottom: 2.5rem;
+}
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+/* Larger than mobile (default point when grid becomes active) */
+@media (min-width: $small) {}
+
+/* Larger than phablet */
+@media (min-width: $medium) {}
+
+/* Larger than tablet */
+@media (min-width: $large) {}
+
+
+

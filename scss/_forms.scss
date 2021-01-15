@@ -1,0 +1,123 @@
+/* Forms
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+form {
+  @include theme('border', $border-color-softer, 0, '1px solid');
+  border-radius: 4px;
+  margin: 5rem 0!important;
+  padding: 3rem 0 0;
+}
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+  margin: 1rem 0 3rem;
+  width: $small-input;
+  height: 38px;
+  padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+  @include theme('color', $text-color-softer);
+  @include theme('background-color', $background-color);
+  @include theme('border', $border-color-softer, 0, '1px solid');
+  border-radius: 4px;
+  letter-spacing: $letter-spacing-i;
+  box-shadow: none;
+  box-sizing: border-box;
+  transition: 0.4s;
+}
+
+
+@media (min-width: $medium) {
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[type="date"],
+  textarea,
+  select {
+    width: $medium-input;
+  }
+}
+
+@media (min-width: $large) {
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[type="date"],
+  textarea,
+  select {
+    width: $large-input;
+  }
+}
+
+
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="password"],
+input[type="button"],
+input[type="submit"],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+textarea {
+  min-height: 65px;
+  padding-top: 6px;
+  padding-bottom: 6px; 
+}
+
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+  @include theme('border', $accent-color, 0, '1px solid');
+  outline: 0;
+  transition: 0.4s;
+}
+
+label,
+legend {
+  display: block;
+  letter-spacing: $letter-spacing-l;
+  font-weight: $font-weight-p;
+}
+
+fieldset {
+  padding: 0;
+  border-width: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+}
+
+form > h1,h2,h3,h4,h5,h6 {
+  margin: 0 0 2.5rem;
+}

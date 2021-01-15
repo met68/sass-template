@@ -1,0 +1,96 @@
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  display: inline-block;
+  margin: 1rem 0 3rem;
+  width: $small-button;
+  height: 38px;
+  margin: 1rem 0 3rem;
+  padding: 0 30px;
+  @include theme('color', $text-color-softer);
+  text-align: center;
+  font-weight: $font-weight-b;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  @include theme('border', $border-color, 0, '1px solid');
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: 0.4s;
+}
+
+
+@media (min-width: $medium) {
+  .button,
+  button,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    width: $medium-button;
+  }
+}
+
+@media (min-width: $large) {
+  .button,
+  button,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    width: $large-button;
+  }
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:focus,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus,
+input[type="button"]:focus {
+  @include theme('color', $text-color-normal);
+  font-weight: $font-weight-bh;
+  @include theme('border-color', $text-color-softer);
+  outline: 0;
+  transition: 0.4s;
+}
+
+.button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary {
+  @include theme('color', $button-primary-color);
+  font-weight: $font-weight-b;
+  @include theme('background-color', $accent-color);
+  @include theme('border-color', $accent-color);
+  transition: 0.4s;
+}
+
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  @include theme('color', $button-primary-color);
+  font-weight: $font-weight-bh;
+  @include theme('background-color', $accent-color-hover);
+  @include theme('border-color', $accent-color-hover);
+  transition: 0.4s;
+}
+

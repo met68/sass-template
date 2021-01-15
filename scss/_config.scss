@@ -1,0 +1,23 @@
+
+/* Note: Skeleton was based off a 10px font sizing for REM  */
+/* 62.5% of typical 16px browser default = 10px */
+$base-font-size: 62.5%;
+
+/* Grid Defaults - default to match orig skeleton settings */
+$grid-min-width: 200px;
+$grid-max-width: 960px;
+
+/* Media Query Screen Sizes */
+$small:   600px;
+$medium:  900px;
+$large:  1200px;
+
+/* Width of Form Fields & Buttons 
+Small, Medium and Large relates to
+Media Querries above */
+$small-input: 94%;
+$small-button: 94%;
+$medium-input: 38%;
+$medium-button: 38%;
+$large-input: 250px;
+$large-button: 250px;

@@ -1,0 +1,47 @@
+/* Navigation
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+nav {
+  margin: 0px auto;
+  width: 100%;
+  max-width: $grid-max-width;
+  @include theme('background-color', $background-color-nav);
+}
+
+nav ul.grid-container {
+  padding: 0;
+}
+
+nav > ul {
+  margin: 0;
+}
+
+nav > ul > li {
+  margin: 0;
+  display:inline-block;
+  list-style: none;
+  padding: 2rem 0;
+}
+
+nav > ul > li > a {
+  font-weight: $font-weight-nav;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-nav;
+}
+
+#menu {
+  display: block;
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: $small) {
+  nav > ul > li {
+    padding: 3rem 0;
+  }
+  nav > ul > li > a {
+    font-size: 2rem;
+  }  
+}

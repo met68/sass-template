@@ -1,0 +1,33 @@
+/* Tables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+table {
+  margin: 5rem 0;
+}
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  @include theme('border-bottom', $border-color-softer, 0, '1px solid');
+}
+
+/*
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+*/
+
+th {
+  font-weight: $font-weight-th;
+  letter-spacing: $letter-spacing-th;
+}
+
+td {
+  font-weight: $font-weight-td;
+  letter-spacing: $letter-spacing-td;
+}

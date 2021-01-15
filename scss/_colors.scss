@@ -1,0 +1,94 @@
+/*
+  Main Colour Scheme
+*/
+$theme-hue: 0;                                      /* white */
+$accent-hue: 194;			                              /* blue */
+
+$red: #F03333;
+$green: #33F033;
+
+/*
+  Implementing light & dark mode using SASS logic from following article: 
+  https://www.fabrizioduroni.it/2020/05/20/dark-mode-css-sass-scss.html
+*/
+
+$dark-theme: "dark-theme";
+$light-theme: "light-theme";
+
+/* default theme: light background, dark text, blue accent */
+/* $theme-hue: "theme-hue";
+$accent-hue: "accent-hue"; */
+$text-color-richer: "text-color-richer";
+$text-color-normal: "text-color-normal";
+$text-color-softer: "text-color-softer";
+$accent-color: "accent-color";
+$accent-color-hover: "accent-color-hover";
+$border-color: "border-color";
+$border-color-softer: "border-color-softer";
+$background-color: "background-color";
+$background-color-softer: "background-color-softer";
+$code-background: "code-background";
+$button-primary-color: "button-primary-color";
+
+/* Background Color Navigation */
+$background-color-nav: $background-color;
+
+/* Background Color Footer */
+$background-color-footer: $background-color;
+
+
+$themes: (
+  $light-theme: (
+    /* default theme: light background, dark text, blue accent */
+    $text-color-richer: hsl($theme-hue, 0%, 5%),			  /* #0d0d0d		*/
+    $text-color-normal: hsl($theme-hue, 0%, 13%),		    /* #222222 		text color; button:hover:focus color */
+    $text-color-softer: hsl($theme-hue, 0%, 33%),		    /* #555555 		button color; button:hover border */
+    $accent-color: hsl($accent-hue, 86%, 57%),				  /* #33C3F0 		link; button-primary bg+border; textarea,select:focus border */
+    $accent-color-hover: hsl($accent-hue, 76%, 49%),	  /* #1EAEDB 		link hover; button-primary:hover:focus bg+border */
+    $border-color: hsl($theme-hue, 0%, 73%),            /* #bbbbbb		button border */
+    $border-color-softer: hsl($theme-hue, 0%, 82%),     /* #d1d1d1		textarea,select,code,td,hr border	 */
+    $background-color: white,                         /* transparent body background; textarea,select background */
+    $background-color-softer: hsl($theme-hue, 0%, 95%),
+    $code-background: hsl($theme-hue, 0%, 95%),			    /* #f1f1f1 		code background*/
+    $button-primary-color: white,
+  ),
+  $dark-theme: (
+    $text-color-richer: hsl($theme-hue, 0%, 95%),	      /* 		*/
+    $text-color-normal: hsl($theme-hue, 0%, 80%),		    /* text color; button:hover:focus color */
+    $text-color-softer: hsl($theme-hue, 0%, 67%),		    /* button color; button:hover border */
+    $accent-color: hsl($accent-hue, 76%, 49%),			    /* link; button-primary bg+border; textarea,select:focus border */
+    $accent-color-hover: hsl($accent-hue, 86%, 57%),	  /* link hover; button-primary:hover:focus bg+border */
+    $border-color: hsl($theme-hue, 0%, 27%),            /* button border */
+    $border-color-softer: hsl($theme-hue, 0%, 20%),     /* textarea,select,code,td,hr border	 */
+    $background-color: hsl($theme-hue, 0%, 12%),        /* body background; textarea,select background */
+    $background-color-softer: hsl($theme-hue, 0%, 18%),
+    $code-background: hsl($theme-hue, 0%, 5%),           /* code background*/
+    $button-primary-color: white,
+  )
+);
+
+@mixin themeProperty($theme, $property, $color, $additionalPropertiesPositionIsFront, $additionalProperties) {
+  @if $additionalPropertiesPositionIsFront {
+    #{$property}: unquote($additionalProperties + ' ' + map-get($theme, $color));
+  } @else {
+    #{$property}: unquote(map-get($theme, $color) + ' ' + $additionalProperties);
+  }
+}
+
+@mixin theme($property, $color, $additionalPropertiesPositionIsFront: false, $additionalProperties: '') {
+  $light: map-get($themes, $light-theme);
+  $dark: map-get($themes, $dark-theme);
+  
+  @include themeProperty($light, $property, $color, $additionalPropertiesPositionIsFront, $additionalProperties);
+
+  @media (prefers-color-scheme: dark) {
+    @include themeProperty($dark, $property, $color, $additionalPropertiesPositionIsFront, $additionalProperties);
+  }
+}
+
+/*
+For Dark Mode:
+img.value-img {
+  filter: invert(0.8);
+}
+*/

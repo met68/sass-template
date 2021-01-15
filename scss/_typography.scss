@@ -1,0 +1,145 @@
+/* Fontweights (100, 200, 300, 400, 600, 700)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Default */
+$font-weight-x: 300;
+/* Para */
+$font-weight-p: 300;
+/* Big Headers */
+$font-weight-h: 100;
+/* Small Headers */
+$font-weight-hs: 200;
+/* Nav */
+$font-weight-nav: 300;
+/* Anchors */
+$font-weight-a: 300;
+/* Anchors-Hover */
+$font-weight-ah: 400;
+/* Buttons */
+$font-weight-b: 300;
+/* Buttons-Hover */
+$font-weight-bh: 400;
+/* Table Header */
+$font-weight-th: 600;
+/* Table Cells */
+$font-weight-td: 300;
+/* Flash Messages */
+$font-weight-f: 300;
+/* Footer */
+$font-weight-footer: 100;
+
+/* Extra Light */
+$font-weight-extra-light: 100;
+/* Light */
+$font-weight-light: 200;
+/* Normal */
+$font-weight-normal: 300;
+/* Extra Normal */
+$font-weight-extra-normal: 400;
+/* Bold */
+$font-weight-bold: 600;
+/* Extra Bold */
+$font-weight-extra-bold: 700;
+
+/* Letter Spacing
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Default */
+$letter-spacing-x: 0.08rem;
+/* Big Headers */
+$letter-spacing-h: -0.08rem;
+/* Small Headers */
+$letter-spacing-hs: -0.08rem;
+/* Para */
+$letter-spacing-p: 0.08rem;
+/* Flash Messages */
+$letter-spacing-m: 0.08rem;
+/* Noscript */
+$letter-spacing-n: 0.08rem;
+/* Nav */
+$letter-spacing-nav: 0.12rem;
+/* Footer */
+$letter-spacing-f: 0.15rem;
+/* Table Headers */
+$letter-spacing-th: 0.08rem;
+/* Table Cells */
+$letter-spacing-td: 0.08rem;
+/* Buttons */
+$letter-spacing-b: 0.08rem;
+/* Anchors */
+$letter-spacing-a: 0.08rem;
+/* Form Labels */
+$letter-spacing-l: 0.08rem;
+/* Form Inputs */
+$letter-spacing-i: 0.08rem;
+
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-weight: $font-weight-h; 
+}
+
+h4, h5, h6 {
+  margin-top: 1.5;
+  margin-bottom: 1.5rem;
+  font-weight: $font-weight-hs; 
+}
+
+h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: $letter-spacing-h; }   /* Default Letter Spacing -0.1rem */
+h2 { font-size: 3.6rem; line-height: 1.25; letter-spacing: $letter-spacing-h; }  /* Default Letter Spacing -0.1rem */
+h3 { font-size: 3.0rem; line-height: 1.3;  letter-spacing: $letter-spacing-h; }  /* Default Letter Spacing -0.1rem */
+h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: $letter-spacing-hs; } /* Default Letter Spacing -0.08rem */
+h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: $letter-spacing-hs; } /* Default Letter Spacing -0.05rem */
+h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: $letter-spacing-hs; }       /* Default Letter Spacing 0 */
+
+/* Larger than phablet */
+@media (min-width: 600px) {
+  h1 { font-size: 5.0rem; }
+  h2 { font-size: 4.2rem; }
+  h3 { font-size: 3.6rem; }
+  h4 { font-size: 3.0rem; }
+  h5 { font-size: 2.4rem; }
+  h6 { font-size: 1.5rem; }
+}
+
+p, span {
+  margin-top: 0; 
+  font-weight: $font-weight-p; 
+  letter-spacing: $letter-spacing-p;
+}
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+  text-decoration: none;
+  font-weight: $font-weight-a;
+  letter-spacing: $letter-spacing-a;
+  @include theme('color', $accent-color);
+  transition: color 0.4s;
+}
+
+a:hover {
+  font-weight: $font-weight-ah;
+  @include theme('color', $accent-color-hover);
+  transition: color 0.4s;
+} 
+
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+code {
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  font-size: 90%;
+  white-space: nowrap;
+  @include theme('background', $code-background);
+  @include theme('border', $border-color-softer, 0, '1px solid');
+  border-radius: 4px;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre; 
+  overflow: auto;
+}
